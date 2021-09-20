@@ -10,7 +10,7 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-# from functools import partial
+from functools import partial
 from PyQt5.QtWidgets import QApplication, QMainWindow
 
 
@@ -21,7 +21,7 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(160, 50, 399, 328))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(160, 50, 399, 343))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -35,15 +35,15 @@ class Ui_MainWindow(object):
         self.label_3 = QtWidgets.QLabel(self.verticalLayoutWidget)
         self.label_3.setObjectName("label_3")
         self.verticalLayout.addWidget(self.label_3)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
         self.lineEdit_3.setObjectName("lineEdit_3")
-        self.verticalLayout.addWidget(self.lineEdit_3)
-        self.label_4 = QtWidgets.QLabel(self.verticalLayoutWidget)
-        self.label_4.setObjectName("label_4")
-        self.verticalLayout.addWidget(self.label_4)
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.verticalLayout.addWidget(self.lineEdit_4)
+        self.horizontalLayout_4.addWidget(self.lineEdit_3)
+        self.lineEdit = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        self.lineEdit.setObjectName("lineEdit")
+        self.horizontalLayout_4.addWidget(self.lineEdit)
+        self.verticalLayout.addLayout(self.horizontalLayout_4)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.pushButton_12 = QtWidgets.QPushButton(self.verticalLayoutWidget)
@@ -71,6 +71,12 @@ class Ui_MainWindow(object):
         self.pushButton_11.setObjectName("pushButton_11")
         self.horizontalLayout_3.addWidget(self.pushButton_11)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.result = QtWidgets.QPushButton(self.verticalLayoutWidget)
+        self.result.setObjectName("result")
+        self.verticalLayout.addWidget(self.result)
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.verticalLayoutWidget)
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.verticalLayout.addWidget(self.lineEdit_4)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
@@ -82,47 +88,57 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        MainWindow.setTabOrder(self.textBrowser, self.pushButton_7)
+        MainWindow.setTabOrder(self.pushButton_7, self.lineEdit)
+        MainWindow.setTabOrder(self.lineEdit, self.lineEdit_3)
+        MainWindow.setTabOrder(self.lineEdit_3, self.pushButton_8)
+        MainWindow.setTabOrder(self.pushButton_8, self.pushButton_9)
+        MainWindow.setTabOrder(self.pushButton_9, self.pushButton_10)
+        MainWindow.setTabOrder(self.pushButton_10, self.pushButton_12)
+        MainWindow.setTabOrder(self.pushButton_12, self.pushButton_11)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "我的简易计算机"))
-        self.textBrowser.setHtml(_translate("MainWindow",
-                                            "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-                                            "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-                                            "p, li { white-space: pre-wrap; }\n"
-                                            "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-                                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">使用过程</p>\n"
-                                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1、输入要计算的数值</p>\n"
-                                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2、点击运算操作</p>\n"
-                                            "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3、自动得出结果在输出栏</p></body></html>"))
+        self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">使用过程</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">1、输入要计算的数值</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">2、点击运算操作</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">3、自动得出结果在输出栏</p></body></html>"))
         self.label_3.setText(_translate("MainWindow", "输入"))
-        self.label_4.setText(_translate("MainWindow", "输出"))
         self.pushButton_12.setText(_translate("MainWindow", "+"))
         self.pushButton_10.setText(_translate("MainWindow", "-"))
         self.pushButton_7.setText(_translate("MainWindow", "*"))
         self.pushButton_9.setText(_translate("MainWindow", "/"))
         self.pushButton_8.setText(_translate("MainWindow", "//"))
         self.pushButton_11.setText(_translate("MainWindow", "%"))
+        self.result.setText(_translate("MainWindow", "输出"))
 
 
-def plusbutton():
-
+def click(ui):
+    a = ui.lineEdit_3.text()
+    b = ui.lineEdit.text()
+    result = a*b
+    ui.lineEdit_4.setText(str(result))
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-
-    """
-        MAIN = QMainWindow()
-        MAIN.show()
-        这两步是创建一个窗口
-    """
-    MAIN = QMainWindow()
-    # 实例化 UI
+    window = QMainWindow()
     ui = Ui_MainWindow()
-    ui.setupUi(MAIN)
-    ui.retranslateUi(MAIN)
-    MAIN.show()
-    ui.lineEdit_3.
-    sys.exit(app.exec_())
+    ui.setupUi(window)
+    # ui.retranslateUi(window)
+    window.show()
+    ui.result.clicked.connect(partial(click, ui))
+    # ui.pushButton_12.clicked.connect()
+    # ui.pushButton_10.clicked.connect()
+    # ui.pushButton_7.clicked.connect()
+    # ui.pushButton_9.clicked.connect()
+    # ui.pushButton_9.clicked.connect()
+    # ui.pushButton_11.clicked.connect()
+    app.exit(app.exec_())
+

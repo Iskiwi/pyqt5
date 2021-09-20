@@ -20,7 +20,7 @@
       <x>160</x>
       <y>50</y>
       <width>399</width>
-      <height>328</height>
+      <height>343</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -53,17 +53,14 @@ p, li { white-space: pre-wrap; }
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_3"/>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>输出</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit_4"/>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLineEdit" name="lineEdit_3"/>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit"/>
+       </item>
+      </layout>
      </item>
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -119,6 +116,16 @@ p, li { white-space: pre-wrap; }
        </item>
       </layout>
      </item>
+     <item>
+      <widget class="QPushButton" name="result">
+       <property name="text">
+        <string>输出</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_4"/>
+     </item>
     </layout>
    </widget>
   </widget>
@@ -134,6 +141,17 @@ p, li { white-space: pre-wrap; }
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <tabstops>
+  <tabstop>textBrowser</tabstop>
+  <tabstop>pushButton_7</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>lineEdit_3</tabstop>
+  <tabstop>pushButton_8</tabstop>
+  <tabstop>pushButton_9</tabstop>
+  <tabstop>pushButton_10</tabstop>
+  <tabstop>pushButton_12</tabstop>
+  <tabstop>pushButton_11</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
