@@ -143,14 +143,16 @@ p, li { white-space: pre-wrap; }
  </widget>
  <tabstops>
   <tabstop>textBrowser</tabstop>
-  <tabstop>pushButton_7</tabstop>
-  <tabstop>lineEdit</tabstop>
   <tabstop>lineEdit_3</tabstop>
+  <tabstop>lineEdit</tabstop>
+  <tabstop>pushButton_7</tabstop>
   <tabstop>pushButton_8</tabstop>
   <tabstop>pushButton_9</tabstop>
   <tabstop>pushButton_10</tabstop>
   <tabstop>pushButton_12</tabstop>
   <tabstop>pushButton_11</tabstop>
+  <tabstop>result</tabstop>
+  <tabstop>lineEdit_4</tabstop>
  </tabstops>
  <resources/>
  <connections/>
