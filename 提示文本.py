@@ -5,7 +5,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QToolTip
-# import PyQt5.Qtcore
+from PyQt5.QtCore import QCoreApplication
 from PyQt5.QtGui import QIcon, QFont
 
 
@@ -22,6 +22,7 @@ class Tooltip(QWidget):
         # 设置button
         btn = QPushButton("close button", self)
         btn.resize(btn.sizeHint())
+        btn.clicked.connect(QCoreApplication.instance().quit)
         btn.move(50, 50)
         # 设置提示文本, 分别给窗口和button 设置提示文本
         QToolTip.setFont(QFont('SansSerif', 10))
