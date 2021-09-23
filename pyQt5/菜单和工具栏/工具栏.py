@@ -16,7 +16,9 @@ class Example(QMainWindow):
         self.initUI()
 
     def initUI(self):
-        exitAction = QAction(QIcon('exit24.png'), 'Exit', self)
+        # create a action 对象
+        # 这个对象有标签 图标 快捷键
+        exitAction = QAction(QIcon('520.jpg'), 'Exit', self)
         exitAction.setShortcut('Ctrl+Q')
         exitAction.triggered.connect(qApp.quit)
 
@@ -27,11 +29,6 @@ class Example(QMainWindow):
         self.setWindowTitle('Toolbar')
         self.show()
 
-
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    ex = Example()
-    sys.exit(app.exec_())
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
