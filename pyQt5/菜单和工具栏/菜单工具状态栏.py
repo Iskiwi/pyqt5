@@ -7,7 +7,7 @@
 This program create a window with menubar，statusbar and toolbar and a central widget.
 """
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, qApp, QAction
+from PyQt5.QtWidgets import QMainWindow, QApplication, qApp, QAction, QTextEdit
 from PyQt5.QtGui import QIcon
 from PyQt5.QtCore import QCoreApplication
 
@@ -43,6 +43,10 @@ class Exceple(QMainWindow):
         # toolbar
         toolbar = self.addToolBar("Toolbar")
         toolbar.addAction(action)
+
+        # 加一个textedit部件
+        textEdit = QTextEdit()
+        self.setCentralWidget(textEdit)
 
         self.show()
 
