@@ -27,8 +27,9 @@ class Example(QWidget):
 
         # 创建一个水平布局，添入一个可伸长因素，和两个button 按钮
         hbox = QHBoxLayout()
-        hbox.addStretch(1)
+        hbox.addStretch(3)
         hbox.addWidget(btn1)
+        hbox.addStretch(7)
         hbox.addWidget(btn2)
 
         # 垂直布局
