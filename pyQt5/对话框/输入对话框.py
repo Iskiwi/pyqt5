@@ -6,7 +6,7 @@
 import sys
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QWidget, QPushButton, QLineEdit,
-    QInputDialog, QApplication)
+                             QInputDialog, QApplication)
 
 
 class Example(QWidget):
@@ -31,6 +31,7 @@ class Example(QWidget):
     def showDialog(self):
         text, ok = QInputDialog.getText(self, 'Input Dialog',
                                         'Enter your name:')
+        # print(text, ok)  # 12 True
 
         if ok:
             self.le.setText(str(text))  # 将输入对话框获取到的文本给到lineEdit
