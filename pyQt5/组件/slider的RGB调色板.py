@@ -88,17 +88,16 @@ class Example(QWidget):
 
     def showvalue(self, pressed):
         object = self.sender()
-        if pressed:
-            pass
-
         if object.text() == "R":
-            self.frame.setStyleSheet("QFrame { background-color: %s }" %
-                                     self.col.name())
+            if pressed：
+                self.col.setRed(self.Rlbl.getText())
         elif object.text() == "G":
-            self.frame.setStyleSheet("QFrame { background-color: %s }" %
-                                     self.col.name())
+            if pressed：
+                self.col.setRed(self.Glbl.getText())
         else:
-            self.frame.setStyleSheet("QFrame { background-color: %s }" %
+            if pressed：
+                self.col.setRed(self.Blbl.getText())
+        self.frame.setStyleSheet("QFrame { background-color: %s }" %
                                      self.col.name())
 
 
