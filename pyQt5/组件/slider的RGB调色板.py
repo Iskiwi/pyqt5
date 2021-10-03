@@ -74,8 +74,8 @@ class Example(QWidget):
         self.show()
 
     def setR(self, value):
-        val = int(value*256/100)
-        self.Rlbl.setText(value)
+        val = int(value * 256 / 100)
+        self.Rlbl.setText(val)
 
     def setG(self, value):
         val = int(value * 256 / 100)
