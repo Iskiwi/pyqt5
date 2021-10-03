@@ -57,31 +57,10 @@ class Example(QWidget):
         Bslider = QSlider(Qt.Horizontal, self)
         Bslider.setGeometry(100, 120, 100, 20)
         Bslider.valueChanged[int].connect(self.setB)
-        # 标签
-        self.Rlbl = QLabel(self)
-        self.Rlbl.move(240, 60)
-        self.Rlbl.setText("0")
 
-        self.Glbl = QLabel(self)
-        self.Glbl.move(240, 90)
-        self.Glbl.setText("0")
-
-        self.Blbl = QLabel(self)
-        self.Blbl.move(240, 120)
-        self.Blbl.setText("0")
         # 按键
-        Rbtn = QPushButton("R", self)
-        Rbtn.move(0, 60)
-        Rbtn.setCheckable(True)
-        Rbtn.clicked[bool].connect(self.showvalue)
-        Gbtn = QPushButton("G", self)
-        Gbtn.move(0, 90)
-        Gbtn.setCheckable(True)
-        Gbtn.clicked[bool].connect(self.showvalue)
-        Bbtn = QPushButton("B", self)
-        Bbtn.move(0, 120)
-        Bbtn.setCheckable(True)
-        Bbtn.clicked[bool].connect(self.showvalue)
+        RGB = QPushButton("混合三种颜色", self)
+        RGB.clicked.connect(self.RGB_)
 
         self.frame = QFrame(self)
         self.col = QColor(0, 0, 0)
@@ -90,7 +69,7 @@ class Example(QWidget):
                                   self.col.name())
 
         self.setGeometry(300, 300, 600, 400)
-        self.setWindowTitle('Slider的调色板')
+        self.setWindowTitle('Slider的RGB调色板')
         self.show()
 
     def setR(self, value):
@@ -102,25 +81,10 @@ class Example(QWidget):
     def setB(self, value):
         self.b = int(value * 256 / 100)
 
-    def showvalue(self, pressed):
-        object = self.sender()
-        if object.text() == "R":
-            if pressed:
-                self.col.setRed(self.r)
-            else:
-                self.col.setRed(0)
-        elif object.text() == "G":
-            if pressed:
-                self.col.setGreen(self.g)
-            else:
-                self.col.setGreen(0)
-        else:
-            if pressed:
-                self.col.setBlue(self.b)
-            else:
-                self.col.setBlue(0)
+    def RGB_(self):
+        self.col = QColor(self.r, self.g, self.b)
         self.frame.setStyleSheet("QFrame { background-color: %s }" %
-                                     self.col.name())
+                                 self.col.name())
 
 
 if __name__ == '__main__':
