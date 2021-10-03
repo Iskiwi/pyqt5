@@ -24,6 +24,9 @@ class Example(QWidget):
 
     def __init__(self):
         super().__init__()
+        self.r = 0
+        self.g = 0
+        self.b = 0
         self.initUI()
 
     def initUI(self):
@@ -37,69 +40,34 @@ class Example(QWidget):
         Bslider = QSlider(Qt.Horizontal, self)
         Bslider.setGeometry(100, 120, 100, 20)
         Bslider.valueChanged[int].connect(self.setB)
-        # 标签
-        self.Rlbl = QLabel(self)
-        self.Rlbl.move(240, 60)
-        self.Rlbl.setText("0")
 
-        self.Glbl = QLabel(self)
-        self.Glbl.move(240, 90)
-        self.Glbl.setText("0")
-
-        self.Blbl = QLabel(self)
-        self.Blbl.move(240, 120)
-        self.Blbl.setText("0")
         # 按键
-        Rbtn = QPushButton("R", self)
-        Rbtn.move(0, 60)
-        Rbtn.setCheckable(True)
-        Rbtn.clicked[bool].connect(self.showvalue)
-        Gbtn = QPushButton("G", self)
-        Gbtn.move(0, 90)
-        Gbtn.setCheckable(True)
-        Gbtn.clicked[bool].connect(self.showvalue)
-        Bbtn = QPushButton("B", self)
-        Bbtn.move(0, 120)
-        Bbtn.setCheckable(True)
-        Bbtn.clicked[bool].connect(self.showvalue)
+        RGB = QPushButton("混合三种颜色", self)
+        RGB.clicked.connect(self.RGB_)
 
         self.frame = QFrame(self)
         self.col = QColor(0, 0, 0)
-        self.frame.setGeometry(300, 50, 150, 150)
+        self.frame.setGeometry(350, 50, 150, 150)
         self.frame.setStyleSheet("QFrame { background-color: %s }" %
                                   self.col.name())
 
         self.setGeometry(300, 300, 600, 400)
-        self.setWindowTitle('Slider的调色板')
+        self.setWindowTitle('Slider的RGB调色板')
         self.show()
 
     def setR(self, value):
-        val = int(value*256/100)
-        self.Rlbl.setText(value)
+        self.r = int(value * 256 / 100)
 
     def setG(self, value):
-        val = int(value * 256 / 100)
-        self.Glbl.settext(val)
+        self.g = int(value * 256 / 100)
 
     def setB(self, value):
-        val = int(value * 256 / 100)
-        self.Blbl.setText(val)
+        self.b = int(value * 256 / 100)
 
-
-    def showvalue(self, pressed):
-        object = self.sender()
-        if object.text() == "R":
-            if pressed：
-                self.col.setRed(self.Rlbl.getText())
-        elif object.text() == "G":
-            if pressed：
-                self.col.setRed(self.Glbl.getText())
-        else:
-            if pressed：
-                self.col.setRed(self.Blbl.getText())
+    def RGB_(self):
+        self.col = QColor(self.r, self.g, self.b)
         self.frame.setStyleSheet("QFrame { background-color: %s }" %
-                                     self.col.name())
-
+                                 self.col.name())
 
 
 if __name__ == '__main__':
