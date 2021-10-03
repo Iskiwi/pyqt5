@@ -85,7 +85,6 @@ class Example(QWidget):
         val = int(value * 256 / 100)
         self.Blbl.setText(val)
 
-
     def showvalue(self, pressed):
         object = self.sender()
         if object.text() == "R":
