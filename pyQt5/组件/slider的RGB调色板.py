@@ -102,18 +102,23 @@ class Example(QWidget):
     def setB(self, value):
         self.b = int(value * 256 / 100)
 
-
     def showvalue(self, pressed):
         object = self.sender()
         if object.text() == "R":
             if pressed:
                 self.col.setRed(self.r)
+            else:
+                self.col.setRed(0)
         elif object.text() == "G":
             if pressed:
                 self.col.setGreen(self.g)
+            else:
+                self.col.setGreen(0)
         else:
             if pressed:
                 self.col.setBlue(self.b)
+            else:
+                self.col.setBlue(0)
         self.frame.setStyleSheet("QFrame { background-color: %s }" %
                                      self.col.name())
 
