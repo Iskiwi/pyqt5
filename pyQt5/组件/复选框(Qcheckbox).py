@@ -21,7 +21,7 @@ class Example(QWidget):
     def initUI(self):
         cb = QCheckBox('Show title', self)
         cb.move(20, 20)
-        cb.toggle()  # 切换， 不添加似乎也可以
+        cb.toggle()  # 使复选框默认被选中
         # 我们需要设置窗口标题，所以我们必须选中复选框。如果不选中复选框，默认情况下复选框不会被选中所以窗口标题也不会被设置。
         cb.stateChanged.connect(self.changeTitle)
         # 复选框组件的状态会传入changeTitle()
