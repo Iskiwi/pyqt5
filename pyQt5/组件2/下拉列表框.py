@@ -5,7 +5,6 @@
 
 import sys
 from PyQt5.QtWidgets import (QWidget, QComboBox,  QLabel, QApplication)
-from PyQt5.QtCore import Qt
 
 
 class Example(QWidget):
