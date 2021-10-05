@@ -7,6 +7,10 @@ import sys
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget
 from PyQt5.QtGui import QIcon
 
+# 经查阅资料： ../   表示上一级目录
+#             ./      当前目录
+#             /      根目录
+
 
 class Example(QWidget):
 
