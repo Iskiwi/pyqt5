@@ -1,0 +1,28 @@
+一、QLineEdit应用：
+1、验证器
+密码的格式和内容验证
+from PyQt5.QtGui import QIntValidator, QDoubleValidator, QRegExpValidator
+
+
+2、掩码设置
+掩码：
+由掩码字符和分割字符组成，后面可以跟一个分号和空白字符，空白字符在编辑后会从文本中删除.
+就是差不多固定格式的内容输入。
+
+二、常用信号
+textChanged[str].connect -> text
+selectionChanged  -> 选择改变
+editingFinished-> 编辑结束就是按下Enter键
+三、常用方法
+setEchoMode(QLineEdit.Password)等四种
+                        Normal
+                        NoEcho
+                        PasswordEchoOnEdit
+
+setVaildator()
+
+# 判断是否符合正则表达式的验证器
+reg = QRegExp("[a-zA-Z0-9]+$")
+pValidator = QRegExpValidator(self)
+pValidator.setRegExp(reg)
+e.setVaildator(pValidator)
