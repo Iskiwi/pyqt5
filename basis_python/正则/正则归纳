@@ -1,0 +1,50 @@
+介绍：
+参考链接：ps://blog.csdn.net/qq_20412595（ 写得很好）
+
+正则有匹配、字符替换、字符分割 的功能
+一、正则匹配的时候可以生成匹配对象
+1、生成对象
+matchobject = re.compile(pattern[,flag])
+matchobject.match(string, start, endposition)
+
+2、不生成正则对象
+re.match(pattern, string, flag)
+
+二、匹配功能
+1、三种方式
+re.match()
+re.search()
+re.findall() 演变-> re.finditer() 一种迭代器
+
+2、区别
+match 是从位置为0 的位置开始匹配， 当正则表达式结束时仍然可以匹配，则匹配成功
+search 是从任意位置开始匹配，只返回一个结果
+findall 是以 列表形式 返回所有匹配的子串
+
+三、替换功能
+1、re.sub(pattern, repl, string[,count  ,flag])
+count 替换的次数
+默认全部匹配的字串都被替换
+
+返回值：被替换后的string 或者 原始string
+2、re.subn(pattern, repl, string[,count  ,flag])
+只有返回值不同， 以元组形式返回替换后的string 、count
+
+四、字符分割
+re.split(patter, string[,maxsplit  ,flag])  --> 以列表形式返回
+# 分割匹配的pattern 是分割的依据
+print(re.split("\.", "192.168.1.1"))  # ['192', '168', '1', '1']
+
+五、escape
+"""
+    将字符串中正则表达式特殊字符之前加上转义符 “\”，  再返回
+"""
+print(re.escape("www.python.org"))
+
+# result： www\.python\.org
+
+六、 注意：
+findall 没有group , 并不是所有的匹配方式都有group（）
+貌似是只有match 有
+
+
