@@ -1,0 +1,11 @@
+一、主动引发异常(是对异常的预判和主动引发)
+raise Exception("抛出一个异常")
+格式：
+raise 异常类[(提示参数)]
+
+raise 会创建一个异常类的对象，提示参数可选，是对异常的一种说明。
+
+二、自定义异常类
+class Errora(Exception):
+    def __init__(self, data):
+        self.data = data
